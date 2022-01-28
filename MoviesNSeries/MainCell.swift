@@ -12,5 +12,6 @@ class MainCell: UICollectionViewCell {
     
     @IBOutlet weak var titulo: UILabel!
     
+    @IBOutlet weak var poster: UIImageView!
     
 }

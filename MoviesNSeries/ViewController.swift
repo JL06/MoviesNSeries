@@ -8,6 +8,7 @@
 import UIKit
 import MoviesTvSeriesFramework
 import MoviesSeriesDominioFramework
+import ApiConFramework
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -107,32 +108,48 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //
         
-        
+        var imgPoster: String?
         let celda = collectionView.dequeueReusableCell(withReuseIdentifier: "celdaReusable", for: indexPath) as! MainCell
         
         switch indexPath.section {
         case 0:
             celda.titulo.text = self.contenidoPeliculas[indexPath.section][indexPath.row].titulo
+            imgPoster = self.contenidoPeliculas[indexPath.section][indexPath.row].imagen
             
         case 1:
             if self.contenidoPeliculas.count < 2 {
                 celda.titulo.text = "Cargando"
             } else {
                 celda.titulo.text = self.contenidoPeliculas[indexPath.section][indexPath.row].titulo
+                imgPoster = self.contenidoPeliculas[indexPath.section][indexPath.row].imagen
             }
             
         case 2:
             celda.titulo.text = self.contenidoSeries[indexPath.section - 2][indexPath.row].titulo
+            imgPoster = self.contenidoSeries[indexPath.section - 2][indexPath.row].imagen
             
         case 3:
             if self.contenidoSeries.count < 2 {
                 celda.titulo.text = "Cargando"
             } else {
                 celda.titulo.text = self.contenidoSeries[indexPath.section - 2][indexPath.row].titulo
+                imgPoster = self.contenidoSeries[indexPath.section - 2][indexPath.row].imagen
             }
             
         default:
             celda.titulo.text = "Vacio"
+        }
+        
+        if let imgPath = imgPoster {
+            let urlsDeApi = MoviesSeriesDominioFramework(apiKey: "")
+            let conexion = ApiConFramework(url: urlsDeApi.obtenerURLImage(image: imgPath))
+            conexion.obtenerRecurso { dat in
+                if let datos = dat {
+                    DispatchQueue.main.async {
+                        celda.poster.image = UIImage(data: datos)
+                    }
+                }
+            }
         }
         
         return celda
