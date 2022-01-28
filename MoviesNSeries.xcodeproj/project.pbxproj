@@ -17,6 +17,8 @@
 		24B57B4127A3A0EF003C2E8B /* MoviesNSeriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B57B4027A3A0EF003C2E8B /* MoviesNSeriesTests.swift */; };
 		24B57B4B27A3A0EF003C2E8B /* MoviesNSeriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B57B4A27A3A0EF003C2E8B /* MoviesNSeriesUITests.swift */; };
 		24B57B4D27A3A0EF003C2E8B /* MoviesNSeriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B57B4C27A3A0EF003C2E8B /* MoviesNSeriesUITestsLaunchTests.swift */; };
+		24B57B5B27A3A14C003C2E8B /* MoviesTvSeriesFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 24B57B5A27A3A14C003C2E8B /* MoviesTvSeriesFramework */; };
+		24B57B5D27A3B38E003C2E8B /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B57B5C27A3B38E003C2E8B /* MainCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		24B57B4627A3A0EF003C2E8B /* MoviesNSeriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesNSeriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B57B4A27A3A0EF003C2E8B /* MoviesNSeriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesNSeriesUITests.swift; sourceTree = "<group>"; };
 		24B57B4C27A3A0EF003C2E8B /* MoviesNSeriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesNSeriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		24B57B5C27A3B38E003C2E8B /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B57B5B27A3A14C003C2E8B /* MoviesTvSeriesFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,7 @@
 				24B57B3427A3A0EF003C2E8B /* LaunchScreen.storyboard */,
 				24B57B3727A3A0EF003C2E8B /* Info.plist */,
 				24B57B2F27A3A0EB003C2E8B /* MoviesNSeries.xcdatamodeld */,
+				24B57B5C27A3B38E003C2E8B /* MainCell.swift */,
 			);
 			path = MoviesNSeries;
 			sourceTree = "<group>";
@@ -146,6 +151,9 @@
 			dependencies = (
 			);
 			name = MoviesNSeries;
+			packageProductDependencies = (
+				24B57B5A27A3A14C003C2E8B /* MoviesTvSeriesFramework */,
+			);
 			productName = MoviesNSeries;
 			productReference = 24B57B2327A3A0EB003C2E8B /* MoviesNSeries.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 24B57B1A27A3A0EB003C2E8B;
+			packageReferences = (
+				24B57B5927A3A14C003C2E8B /* XCRemoteSwiftPackageReference "MoviesTvSeriesFramework" */,
+			);
 			productRefGroup = 24B57B2427A3A0EB003C2E8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,6 +276,7 @@
 				24B57B2727A3A0EB003C2E8B /* AppDelegate.swift in Sources */,
 				24B57B3127A3A0EB003C2E8B /* MoviesNSeries.xcdatamodeld in Sources */,
 				24B57B2927A3A0EB003C2E8B /* SceneDelegate.swift in Sources */,
+				24B57B5D27A3B38E003C2E8B /* MainCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,8 +460,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,7 +473,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -475,8 +489,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +502,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -602,6 +618,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24B57B5927A3A14C003C2E8B /* XCRemoteSwiftPackageReference "MoviesTvSeriesFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JL06/MoviesTvSeriesFramework.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24B57B5A27A3A14C003C2E8B /* MoviesTvSeriesFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24B57B5927A3A14C003C2E8B /* XCRemoteSwiftPackageReference "MoviesTvSeriesFramework" */;
+			productName = MoviesTvSeriesFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		24B57B2F27A3A0EB003C2E8B /* MoviesNSeries.xcdatamodeld */ = {
